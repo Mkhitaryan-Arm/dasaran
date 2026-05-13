@@ -4,450 +4,1092 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>9ե · Վերջին Զանգ 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --cream:#f5f1ea;
-  --cream2:#ede8df;
-  --ink:#16130f;
-  --ink2:#2a2520;
-  --gold:#c9a84c;
-  --gold2:#e8d5a3;
-  --gold3:#a07830;
-  --muted:#7a7060;
-  --border:#d8d0c4;
-  --white:#fdfaf5;
+  --bg:#fff8f0;
+  --warm:#fff3e0;
+  --gold:#f59e0b;
+  --gold2:#fbbf24;
+  --gold3:#d97706;
+  --rose:#f43f5e;
+  --violet:#8b5cf6;
+  --sky:#0ea5e9;
+  --green:#10b981;
+  --cream:#fef9f0;
+  --text:#1c1410;
+  --text2:#6b5a4e;
+  --text3:#9c8a7e;
+  --white:#ffffff;
+  --shadow:rgba(245,158,11,.18);
 }
-html,body{min-height:100%;background:var(--cream);}
-body{font-family:'Inter',sans-serif;color:var(--ink);overflow-x:hidden;}
- 
-/* PAGES */
-.page{display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:56px 28px;}
+html,body{min-height:100%;background:var(--bg);}
+body{font-family:'Raleway',sans-serif;overflow-x:hidden;cursor:default;}
+
+/* CONFETTI CANVAS */
+#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none;}
+
+/* BACKGROUNDS */
+.page{display:none;min-height:100vh;flex-direction:column;align-items:center;position:relative;}
 .page.active{display:flex;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.page.active .ani{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) both;}
-.page.active .ani-1{animation-delay:.05s}
-.page.active .ani-2{animation-delay:.15s}
-.page.active .ani-3{animation-delay:.25s}
-.page.active .ani-4{animation-delay:.35s}
-.page.active .ani-5{animation-delay:.45s}
-.serif{font-family:'Cormorant Garamond',serif;}
-.w{width:100%;max-width:520px;}
- 
-/* ════════════════════════
-   PAGE 1  —  ԾՐԱՐ
-════════════════════════ */
-#p1{background:var(--ink);}
-#p1::before{content:'';position:absolute;inset:0;background-image:
-  radial-gradient(circle at 20% 20%, rgba(201,168,76,.06) 0%, transparent 50%),
-  radial-gradient(circle at 80% 80%, rgba(201,168,76,.04) 0%, transparent 50%);pointer-events:none;}
- 
-.p1-top{text-align:center;margin-bottom:56px;}
-.p1-eyebrow{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
-.p1-rule{width:40px;height:1px;background:var(--gold3);margin:0 auto;}
- 
-.env-wrap{cursor:pointer;margin-bottom:56px;position:relative;}
-.env-wrap:hover .env-body{transform:translateY(-6px);}
-.env-shadow{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:260px;height:18px;background:rgba(0,0,0,.35);border-radius:50%;filter:blur(8px);transition:all .3s;}
-.env-wrap:hover .env-shadow{width:240px;bottom:-16px;opacity:.5;}
-.env-body{width:300px;height:205px;border-radius:3px;position:relative;transition:transform .35s cubic-bezier(.22,1,.36,1);overflow:hidden;background:#211e1a;}
-.env-border{position:absolute;inset:0;border:1px solid rgba(201,168,76,.2);border-radius:3px;z-index:4;pointer-events:none;}
-.env-flap{position:absolute;top:0;left:0;width:0;height:0;border-left:150px solid transparent;border-right:150px solid transparent;border-top:106px solid #1a1714;z-index:2;}
-.env-base{position:absolute;bottom:0;left:0;width:0;height:0;border-left:150px solid #191612;border-right:150px solid #191612;border-top:100px solid transparent;z-index:2;}
-.env-left{position:absolute;top:0;left:0;width:0;height:0;border-bottom:205px solid #1e1b17;border-right:150px solid transparent;z-index:1;}
-.env-right{position:absolute;top:0;right:0;width:0;height:0;border-bottom:205px solid #1e1b17;border-left:150px solid transparent;z-index:1;}
-.env-seal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5;width:70px;height:70px;}
-.seal-ring{width:70px;height:70px;border-radius:50%;border:1px solid rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;}
-.seal-inner{width:56px;height:56px;border-radius:50%;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;}
-.seal-grade{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;}
-.seal-line{width:20px;height:1px;background:var(--gold3);}
- 
-.p1-sub{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#5a5248;letter-spacing:1px;}
- 
-/* ════════════════════════
-   PAGE 2  —  ԳԼԽԱՎՈՐ
-════════════════════════ */
-#p2{background:var(--cream);padding:0;}
-.hero-wrap{width:100%;max-width:520px;padding:56px 28px 0;text-align:center;}
-.hero-ornament{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:20px;}
-.orn-line{flex:1;height:1px;background:var(--border);}
-.orn-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);}
-.hero-label{font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;line-height:.9;color:var(--ink);margin-bottom:12px;}
-.hero-title em{font-style:italic;font-weight:300;}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--muted);}
-.hero-ornament2{display:flex;align-items:center;gap:14px;justify-content:center;margin:24px 0;}
- 
-/* photo mosaic */
-.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:175px 175px;gap:2px;width:100%;max-width:520px;margin:4px 0;}
-.ms{background:var(--cream2);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:11px;color:#bbb;font-family:'Inter',sans-serif;}
-.ms img{width:100%;height:100%;object-fit:cover;display:block;}
-.ms.tall{grid-row:1/3;background:#d8d3c8;}
-.mosaic-foot{width:100%;max-width:520px;display:flex;justify-content:space-between;align-items:center;padding:16px 2px;border-top:1px solid var(--border);margin-bottom:2px;}
-.mf-years{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--muted);}
-.mf-vinyls{display:flex;}
-.mfv{width:34px;height:34px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;margin-left:-9px;border:1.5px solid #444;}
-.mfv:first-child{margin-left:0;}
-.mfv-c{width:8px;height:8px;border-radius:50%;background:#666;}
- 
-.nav-grid{width:100%;max-width:520px;display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:0;}
-.nav-tile{background:var(--ink2);color:var(--cream);padding:24px 22px;cursor:pointer;border:none;font-family:'Cormorant Garamond',serif;font-size:22px;text-align:left;display:flex;justify-content:space-between;align-items:flex-end;transition:background .25s;min-height:90px;flex-direction:column;gap:8px;}
-.nav-tile:hover{background:#362f28;}
-.nav-tile-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:'Inter',sans-serif;font-weight:400;}
-.nav-tile-arrow{font-size:26px;opacity:.4;align-self:flex-end;}
- 
-/* ════════════════════════
-   PAGE 3  —  ՄԵՆՔ
-════════════════════════ */
-#p3{background:var(--cream);justify-content:flex-start;padding:56px 28px 56px;}
-.pg-eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);}
-.pg-title{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:300;color:var(--ink);line-height:1;}
-.pg-rule{height:1px;background:var(--border);margin:20px 0 40px;}
- 
-/* teacher */
-.teacher-wrap{background:var(--ink);padding:28px;display:flex;gap:24px;align-items:flex-start;margin-bottom:40px;position:relative;overflow:hidden;}
-.teacher-wrap::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;border-radius:50%;background:rgba(201,168,76,.04);transform:translate(40px,-40px);}
-.tc-img{width:94px;height:118px;flex-shrink:0;background:#302a25;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:10px;color:#555;font-family:'Inter',sans-serif;}
-.tc-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.tc-right{flex:1;}
-.tc-badge{display:inline-block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:4px 10px;margin-bottom:12px;}
-.tc-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#f5f1ea;margin-bottom:14px;line-height:1.15;}
-.tc-quote{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#9a9088;line-height:1.7;}
-.tc-quote::before{content:'\201C';font-size:28px;color:var(--gold3);line-height:0;vertical-align:-6px;margin-right:2px;}
- 
-/* students */
-.stu-section-hd{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
-.stu-hd-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
-.stu-hd-line{flex:1;height:1px;background:var(--border);}
-.students-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
-.stu-card{display:flex;flex-direction:column;align-items:center;gap:8px;}
-.stu-img{width:100%;aspect-ratio:3/4;background:var(--cream2);overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.stu-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.stu-ini{font-family:'Cormorant Garamond',serif;font-size:24px;color:#ccc8c0;}
-.stu-name{font-size:11px;color:var(--muted);text-align:center;line-height:1.4;letter-spacing:.2px;}
- 
-/* ════════════════════════
-   PAGE 4  —  ՄԱՆՐԱՄASNERR
-════════════════════════ */
-#p4{background:var(--cream);justify-content:flex-start;padding:56px 28px 56px;}
-.cls-photo{height:230px;background:var(--cream2);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:12px;color:#aaa;margin-bottom:40px;}
-.cls-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-.event-card{background:var(--white);border:1px solid var(--border);padding:28px;margin-bottom:4px;}
-.ev-inner-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
-.ev-badge{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
-.ev-bigdate{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;line-height:.95;color:var(--ink);}
-.ev-year{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--muted);}
-.ev-rule{height:1px;background:var(--border);margin:20px 0;}
-.ev-row{display:flex;gap:0;}
-.ev-col{flex:1;padding:0 20px 0 0;}
-.ev-col:first-child{border-right:1px solid var(--border);margin-right:20px;}
-.ev-col-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.ev-col-val{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);}
- 
-/* calendar */
-.cal-wrap{background:var(--white);border:1px solid var(--border);border-top:none;padding:24px 28px;margin-bottom:4px;}
-.cal-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;}
-.cal-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--ink);}
-.cal-sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;}
-.cal-h{font-size:11px;color:var(--muted);padding:6px 0;letter-spacing:1px;}
-.cal-d{font-size:14px;color:var(--muted);padding:7px 2px;}
-.cal-d.hi{position:relative;color:var(--white);font-weight:500;z-index:1;}
-.cal-d.hi::before{content:'';position:absolute;inset:0;width:32px;height:32px;background:var(--ink);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;}
-.cal-d.hi::after{content:'♡';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--gold);}
- 
-/* vinyl player */
-.vinyl-player{background:var(--ink);padding:32px 28px;display:flex;gap:32px;align-items:center;margin-bottom:4px;position:relative;overflow:hidden;}
-.vp-bg{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:200px;height:200px;border-radius:50%;border:1px solid rgba(201,168,76,.08);}
-.vp-bg2{position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:140px;height:140px;border-radius:50%;border:1px solid rgba(201,168,76,.06);}
- 
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.disc{width:150px;height:150px;flex-shrink:0;cursor:pointer;position:relative;}
-.disc-body{width:150px;height:150px;border-radius:50%;position:relative;
-  background:
-    repeating-radial-gradient(circle at center,
-      #1a1714 0px, #1e1b17 2px, #1a1714 4px, #201d19 6px,
-      #1a1714 8px, #1e1b17 10px, #1a1714 12px
-    );
-  animation:spin 3.5s linear infinite;animation-play-state:paused;transition:box-shadow .4s;}
-.disc-body.playing{animation-play-state:running;box-shadow:0 0 0 2px var(--gold3),0 0 24px rgba(201,168,76,.15);}
-.disc-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid rgba(201,168,76,.3);}
-.dl-grade{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--ink);line-height:1;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.2)}28%{transform:scale(1)}42%{transform:scale(1.15)}70%{transform:scale(1)}}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+@keyframes slideDown{from{transform:rotateX(0deg)}to{transform:rotateX(-180deg)}}
+@keyframes envelopeOpen{0%{transform:translateY(0) scale(1);opacity:1}60%{transform:translateY(-20px) scale(1.03);opacity:1}100%{transform:translateY(-60px) scale(0.85);opacity:0}}
+@keyframes letterRise{0%{transform:translateY(80px) scale(0.9);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
+@keyframes stars{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.4)}70%{box-shadow:0 0 0 18px rgba(245,158,11,0)}}
+
+.ani{opacity:0;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) both;}
+.ani-1{animation-delay:.1s}.ani-2{animation-delay:.25s}
+.ani-3{animation-delay:.4s}.ani-4{animation-delay:.55s}.ani-5{animation-delay:.7s}
+
+.w{width:100%;max-width:560px;padding:0 20px;}
+
+/* ============ PAGE 1 — ENVELOPE ============ */
+#p1{
+  background:linear-gradient(135deg,#fff8f0 0%,#fef3c7 40%,#fce7f3 80%,#ede9fe 100%);
+  background-size:400% 400%;
+  animation:gradientShift 8s ease infinite;
+  justify-content:center;align-items:center;
+}
+#p1::before{
+  content:'';position:fixed;inset:0;
+  background:radial-gradient(circle at 20% 20%,rgba(251,191,36,.12) 0%,transparent 50%),
+             radial-gradient(circle at 80% 80%,rgba(244,63,94,.1) 0%,transparent 50%),
+             radial-gradient(circle at 50% 50%,rgba(139,92,246,.07) 0%,transparent 60%);
+  pointer-events:none;
+}
+
+.p1-inner{display:flex;flex-direction:column;align-items:center;gap:0;position:relative;z-index:1;}
+
+.p1-school-badge{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--white);
+  font-size:11px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  padding:8px 28px;border-radius:999px;
+  box-shadow:0 4px 20px rgba(245,158,11,.35);
+  margin-bottom:32px;
+}
+
+/* Stars decoration */
+.stars-row{display:flex;gap:16px;margin-bottom:18px;}
+.star{font-size:20px;animation:stars 2s ease-in-out infinite;}
+.star:nth-child(2){animation-delay:.4s}
+.star:nth-child(3){animation-delay:.8s}
+
+/* ENVELOPE */
+.env-wrapper{
+  position:relative;cursor:pointer;
+  margin:8px 0 32px;
+  perspective:1000px;
+}
+.env-wrapper:hover .env-body{transform:translateY(-8px) scale(1.02);}
+.env-body{
+  width:340px;height:220px;position:relative;
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+  filter:drop-shadow(0 24px 48px rgba(245,158,11,.2));
+  animation:float 4s ease-in-out infinite;
+}
+.env-body.opening{
+  animation:envelopeOpen .8s cubic-bezier(.4,0,.2,1) both;
+}
+/* Envelope base */
+.env-base-rect{
+  position:absolute;inset:0;
+  background:linear-gradient(145deg,#fffbf0,#fef3c7);
+  border-radius:12px;
+  border:2px solid rgba(245,158,11,.3);
+}
+/* Side triangles */
+.env-tri{position:absolute;width:0;height:0;}
+.env-tri-l{
+  top:0;left:0;
+  border-top:110px solid transparent;
+  border-bottom:110px solid transparent;
+  border-left:170px solid rgba(251,191,36,.2);
+}
+.env-tri-r{
+  top:0;right:0;
+  border-top:110px solid transparent;
+  border-bottom:110px solid transparent;
+  border-right:170px solid rgba(245,158,11,.15);
+}
+/* Bottom triangle */
+.env-tri-b{
+  bottom:0;left:0;width:0;height:0;
+  border-left:170px solid transparent;
+  border-right:170px solid transparent;
+  border-bottom:110px solid rgba(251,191,36,.25);
+}
+/* Flap */
+.env-flap-wrap{position:absolute;top:0;left:0;width:340px;overflow:hidden;height:120px;z-index:5;}
+.env-flap{
+  position:absolute;top:0;left:0;
+  width:0;height:0;
+  border-left:170px solid transparent;
+  border-right:170px solid transparent;
+  border-top:120px solid #fef9c3;
+  transform-origin:top center;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.08));
+}
+.env-flap.open{transform:rotateX(-180deg);}
+
+/* Seal */
+.env-seal{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-40%);
+  z-index:10;
+  cursor:pointer;
+}
+.seal-ring{
+  width:88px;height:88px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2),var(--gold3));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px rgba(245,158,11,.5),0 2px 8px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.4);
+  animation:pulse 2s ease-in-out infinite;
+}
+.seal-inner{
+  width:68px;height:68px;border-radius:50%;
+  background:linear-gradient(135deg,#1c1410,#2d1f0f);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  border:2px solid rgba(251,191,36,.4);
+}
+.seal-grade{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:900;
+  color:var(--gold2);line-height:1;
+}
+.seal-line{width:28px;height:1px;background:var(--gold2);opacity:.6;}
+
+.env-corner{
+  position:absolute;width:20px;height:20px;
+  border-color:rgba(245,158,11,.3);border-style:solid;
+  z-index:8;
+}
+.env-corner.tl{top:10px;left:10px;border-width:2px 0 0 2px;}
+.env-corner.tr{top:10px;right:10px;border-width:2px 2px 0 0;}
+.env-corner.bl{bottom:10px;left:10px;border-width:0 0 2px 2px;}
+.env-corner.br{bottom:10px;right:10px;border-width:0 2px 2px 0;}
+
+.p1-cta{
+  font-family:'Dancing Script',cursive;
+  font-size:26px;font-weight:700;
+  color:var(--text2);
+  text-align:center;
+  margin-bottom:4px;
+}
+.p1-hint{
+  font-size:11px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold3);text-align:center;
+  animation:bounce 2s ease-in-out infinite;
+  display:inline-block;
+}
+
+/* Floating emojis */
+.floaties{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+.floaty{position:absolute;font-size:24px;animation:float 6s ease-in-out infinite;opacity:.5;}
+
+/* ============ PAGE 2 — MAIN ============ */
+#p2{
+  background:linear-gradient(160deg,#fffbf0 0%,#fff8f0 100%);
+  align-items:center;
+}
+
+.hero-section{
+  width:100%;max-width:560px;
+  background:linear-gradient(160deg,#1c1410 0%,#2d1a08 60%,#1a0f05 100%);
+  padding:56px 28px 44px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero-section::before{
+  content:'';position:absolute;
+  top:-60px;left:50%;transform:translateX(-50%);
+  width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(251,191,36,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-year-badge{
+  font-size:10px;letter-spacing:8px;font-weight:600;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:16px;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:72px;font-weight:900;line-height:.9;
+  color:#fef9f0;letter-spacing:-2px;margin-bottom:8px;
+}
+.hero-title em{
+  display:block;font-style:italic;font-weight:400;
+  font-size:60px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--rose));
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+.hero-class-tag{
+  font-family:'Dancing Script',cursive;
+  font-size:22px;color:rgba(254,243,199,.7);
+  margin-top:12px;margin-bottom:22px;
+}
+.hero-divider{
+  display:flex;align-items:center;gap:12px;
+  width:200px;
+}
+.hd-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(251,191,36,.5),transparent);}
+.hd-star{color:var(--gold2);font-size:14px;animation:spin 6s linear infinite;}
+
+/* Stats strip */
+.stats-strip{
+  width:100%;max-width:560px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:#fff;
+  border-bottom:3px solid var(--gold2);
+  box-shadow:0 4px 24px rgba(245,158,11,.12);
+}
+.stat-box{
+  padding:18px 10px;text-align:center;
+  border-right:1px solid rgba(245,158,11,.15);
+  position:relative;overflow:hidden;
+}
+.stat-box:last-child{border-right:none;}
+.stat-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s;
+}
+.stat-box:hover::before{transform:scaleX(1);}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:32px;font-weight:700;
+  background:linear-gradient(135deg,var(--gold3),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1;margin-bottom:4px;
+}
+.stat-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);}
+
+/* Photo mosaic */
+.mosaic{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:170px 170px;
+  gap:3px;width:100%;max-width:560px;
+}
+.ms{background:#f5f0e8;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;}
+.ms.tall{grid-row:1/3;}
+.ms-ph{display:flex;flex-direction:column;align-items:center;gap:8px;color:#c8b89a;}
+.ms-icon{font-size:32px;opacity:.5;}
+.ms-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;font-family:'Raleway';}
+.ms img{width:100%;height:100%;object-fit:cover;}
+
+/* Nav tiles */
+.nav-grid{
+  width:100%;max-width:560px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;
+}
+.nav-tile{
+  background:var(--white);color:var(--text);
+  padding:28px 24px;cursor:pointer;border:none;
+  text-align:left;display:flex;flex-direction:column;gap:10px;
+  transition:all .3s;position:relative;overflow:hidden;
+  border-bottom:3px solid transparent;
+}
+.nav-tile:hover{background:#fffbf0;border-bottom-color:var(--gold2);}
+.nav-tile:hover .nt-arr{transform:translate(4px,-4px);}
+.nt-top{display:flex;justify-content:space-between;align-items:flex-start;}
+.nt-badge{font-size:9px;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:var(--gold3);}
+.nt-arr{font-size:24px;color:var(--gold2);transition:transform .3s cubic-bezier(.22,1,.36,1);}
+.nt-title{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:700;color:var(--text);
+}
+.nt-emoji{font-size:28px;margin-bottom:-4px;}
+
+/* ============ PAGE 3 — ՄԵՆ ============ */
+#p3{background:var(--bg);align-items:center;padding-bottom:60px;}
+
+.pg-header{
+  width:100%;max-width:560px;
+  background:linear-gradient(160deg,#1c1410,#3d2010);
+  padding:48px 28px 36px;
+  position:relative;overflow:hidden;
+  margin-bottom:4px;
+}
+.pg-header::after{
+  content:'🎓';position:absolute;right:24px;top:24px;
+  font-size:64px;opacity:.12;
+}
+.pgh-eyebrow{font-size:10px;letter-spacing:7px;font-weight:700;text-transform:uppercase;color:var(--gold2);margin-bottom:12px;}
+.pgh-title{
+  font-family:'Playfair Display',serif;
+  font-size:56px;font-weight:900;color:#fef9f0;
+  line-height:.95;margin-bottom:8px;
+}
+.pgh-sub{
+  font-family:'Dancing Script',cursive;
+  font-size:18px;color:rgba(254,243,199,.65);
+}
+
+/* Teacher card */
+.teacher-card{
+  width:100%;max-width:560px;padding:0 20px;margin-top:20px;
+}
+.tc-inner{
+  background:var(--white);
+  border:2px solid rgba(245,158,11,.2);
+  border-radius:16px;
+  padding:28px;
+  display:flex;gap:24px;align-items:flex-start;
+  box-shadow:0 8px 40px rgba(245,158,11,.1);
+  position:relative;overflow:hidden;
+}
+.tc-inner::before{
+  content:'';position:absolute;top:0;left:0;
+  width:4px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--rose));
+}
+.tc-photo{
+  width:88px;height:110px;flex-shrink:0;
+  background:linear-gradient(145deg,#fef3c7,#fde68a);
+  border-radius:10px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid rgba(245,158,11,.2);
+  font-size:32px;
+}
+.tc-photo img{width:100%;height:100%;object-fit:cover;}
+.tc-badge{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--white);
+  font-size:9px;letter-spacing:5px;text-transform:uppercase;font-weight:700;
+  padding:5px 14px;border-radius:999px;
+  margin-bottom:10px;
+}
+.tc-name{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;color:var(--text);
+  margin-bottom:3px;
+}
+.tc-subject{font-size:13px;color:var(--text3);margin-bottom:12px;font-style:italic;}
+.tc-quote{
+  font-family:'Dancing Script',cursive;
+  font-size:15px;color:var(--text2);line-height:1.6;
+}
+.tc-qm{color:var(--gold2);font-size:28px;font-family:'Playfair Display',serif;line-height:.3;display:block;margin-bottom:6px;}
+
+/* Students */
+.students-wrap{width:100%;max-width:560px;padding:0 20px;margin-top:28px;}
+.stu-hdr{
+  display:flex;align-items:center;gap:14px;margin-bottom:20px;
+}
+.stu-lbl{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--gold3);font-weight:700;white-space:nowrap;}
+.stu-rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
+.stu-cnt{
+  font-family:'Playfair Display',serif;font-size:13px;color:var(--text3);white-space:nowrap;
+}
+.students-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.stu-card{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;}
+.stu-photo{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(145deg,#fef3c7,#fde68a);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid transparent;
+  border-radius:8px;
+  transition:all .25s;
+  position:relative;
+}
+.stu-card:hover .stu-photo{
+  border-color:var(--gold2);
+  transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(245,158,11,.3);
+}
+.stu-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.stu-ini{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;color:var(--gold3);
+}
+.stu-num{
+  position:absolute;top:4px;right:4px;
+  font-size:8px;font-weight:700;letter-spacing:1px;
+  color:var(--gold3);
+  background:rgba(255,255,255,.85);
+  padding:1px 4px;border-radius:4px;
+}
+.stu-name{font-size:9px;color:var(--text2);text-align:center;line-height:1.4;font-weight:500;}
+
+/* Back btn */
+.back-area{width:100%;max-width:560px;padding:0 20px;margin-top:20px;}
+.back-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 24px;
+  background:var(--white);
+  border:2px solid rgba(245,158,11,.25);
+  border-radius:999px;
+  cursor:pointer;
+  font-family:'Dancing Script',cursive;font-size:18px;color:var(--text2);
+  transition:all .25s;
+  box-shadow:0 4px 16px rgba(245,158,11,.1);
+}
+.back-btn:hover{border-color:var(--gold2);color:var(--gold3);background:#fffbf0;transform:translateX(-4px);}
+.back-arr{font-size:20px;}
+
+/* ============ PAGE 4 — ՄԱՆՐԱՄASՆ ============ */
+#p4{background:var(--bg);align-items:center;padding-bottom:60px;}
+
+.class-photo-blk{
+  width:100%;max-width:560px;height:220px;
+  background:linear-gradient(145deg,#fef3c7,#fde68a);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;
+  position:relative;margin-bottom:4px;
+}
+.class-photo-blk::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,var(--bg) 100%);
+  pointer-events:none;z-index:1;
+}
+.class-photo-blk img{width:100%;height:100%;object-fit:cover;}
+.cp-ph{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--gold3);font-family:'Dancing Script',cursive;
+  font-size:17px;z-index:2;position:relative;
+}
+.cp-icon{font-size:40px;animation:float 3s ease-in-out infinite;}
+
+/* Event card */
+.ev-section{width:100%;max-width:560px;padding:0 20px;margin-bottom:4px;}
+.ev-card{
+  background:linear-gradient(145deg,#1c1410,#3d2010);
+  border-radius:16px;
+  padding:36px;
+  position:relative;overflow:hidden;
+  box-shadow:0 16px 48px rgba(28,20,16,.3);
+}
+.ev-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--rose),var(--gold),var(--violet));
+}
+.ev-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;}
+.ev-badge{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold2);font-weight:700;}
+.ev-day-pill{
+  background:rgba(251,191,36,.15);
+  border:1px solid rgba(251,191,36,.3);
+  color:var(--gold2);
+  font-family:'Dancing Script',cursive;font-size:14px;
+  padding:4px 14px;border-radius:999px;
+}
+.ev-date{
+  font-family:'Playfair Display',serif;
+  font-size:88px;font-weight:900;line-height:.85;
+  color:#fef9f0;letter-spacing:-3px;
+  display:inline;
+}
+.ev-month{
+  font-family:'Playfair Display',serif;
+  font-size:40px;font-style:italic;font-weight:400;
+  background:linear-gradient(90deg,var(--gold2),var(--rose));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-left:8px;display:inline;
+}
+.ev-wday{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(254,243,199,.4);margin-top:10px;}
+.ev-divider{height:1px;background:rgba(251,191,36,.2);margin:24px 0;}
+.ev-info{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(251,191,36,.1);}
+.ev-cell{background:rgba(28,20,16,.6);padding:20px;}
+.ev-cell:first-child{border-right:1px solid rgba(251,191,36,.1);}
+.ev-cell-lbl{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(254,243,199,.4);margin-bottom:6px;font-weight:700;}
+.ev-cell-val{
+  font-family:'Playfair Display',serif;
+  font-size:32px;font-weight:400;color:#fef9f0;
+}
+
+/* Calendar */
+.cal-section{width:100%;max-width:560px;padding:0 20px;margin-bottom:4px;}
+.cal-card{
+  background:var(--white);
+  border:2px solid rgba(245,158,11,.15);
+  border-radius:16px;padding:28px;
+  box-shadow:0 8px 32px rgba(245,158,11,.08);
+}
+.cal-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;}
+.cal-title{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:500;color:var(--text);
+}
+.cal-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;}
+.cal-h{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);padding:8px 2px;font-weight:700;}
+.cal-d{
+  font-family:'Playfair Display',serif;font-size:14px;
+  color:#d0c8be;padding:8px 2px;border-radius:8px;
+  transition:all .2s;
+}
+.cal-d.cur{color:var(--text2);}
+.cal-d.hi{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--white);font-weight:700;
+  box-shadow:0 4px 16px rgba(245,158,11,.4);
+  animation:heartbeat 2s ease-in-out infinite;
+}
+.cal-d:not(.hi):hover{background:#fef3c7;color:var(--text);}
+
+/* Vinyl */
+.vinyl-section{width:100%;max-width:560px;padding:0 20px;margin-bottom:4px;}
+.vinyl-card{
+  background:var(--white);
+  border:2px solid rgba(245,158,11,.15);
+  border-radius:16px;padding:28px;
+  display:flex;gap:28px;align-items:center;
+  box-shadow:0 8px 32px rgba(245,158,11,.08);
+}
+@keyframes spin360{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.disc-wrap{cursor:pointer;flex-shrink:0;transition:transform .3s;}
+.disc-wrap:hover{transform:scale(1.05);}
+.disc-body{
+  width:140px;height:140px;border-radius:50%;
+  background:repeating-radial-gradient(circle at center,#1a1512 0,#231c16 3px,#1a1512 4px,#201913 8px);
+  position:relative;
+  box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 0 0 2px rgba(255,255,255,.05);
+}
+.disc-body.spinning{animation:spin360 2s linear infinite;}
+.disc-body.spinning{box-shadow:0 0 0 3px var(--gold2),0 8px 40px rgba(245,158,11,.3),inset 0 0 0 2px rgba(255,255,255,.05);}
+.disc-label{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,#fef9f0,#fde68a);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  border:2px solid rgba(245,158,11,.5);
+  box-shadow:inset 0 1px 3px rgba(255,255,255,.5),0 2px 8px rgba(0,0,0,.3);
+  z-index:2;
+}
+.dl-grade{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1c1410;line-height:1;}
 .dl-line{width:18px;height:1px;background:var(--gold3);}
-.disc-hole{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:#333;z-index:2;}
- 
-.vp-info{flex:1;}
-.vp-badge{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-.vp-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#f5f1ea;line-height:1.1;margin-bottom:6px;}
-.vp-artist{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:#8a8078;margin-bottom:24px;}
-.vp-controls{display:flex;align-items:center;gap:16px;}
-.vp-btn{width:48px;height:48px;border-radius:50%;background:var(--cream);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.vp-btn:hover{background:var(--gold2);}
-.play-tri{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid var(--ink);margin-left:3px;}
-.pause-bars{display:flex;gap:4px;align-items:center;}
-.pb{width:4px;height:16px;background:var(--ink);border-radius:1px;}
-.vp-label{font-family:'Cormorant Garamond',serif;font-size:18px;color:#8a8078;font-style:italic;}
- 
-/* evening */
-.evening-card{background:var(--ink2);padding:28px;display:flex;justify-content:space-between;align-items:center;}
-.ev2-left{}
-.ev2-badge{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.ev2-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--cream);}
-.ev2-right{text-align:right;}
-.ev2-month{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:rgba(245,241,234,.15);line-height:1;}
- 
-/* back */
-.back-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 0;background:none;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--muted);transition:color .2s;margin-top:4px;}
-.back-btn:hover{color:var(--ink);}
-.back-arr{width:20px;height:1px;background:currentColor;position:relative;display:inline-block;}
-.back-arr::before{content:'';position:absolute;left:-1px;top:-3px;width:7px;height:7px;border-left:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);}
+.disc-hole{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:#0a0805;z-index:3;}
+.vp-right{flex:1;}
+.vp-badge{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold3);font-weight:700;margin-bottom:10px;}
+.vp-title{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);
+  line-height:1.2;margin-bottom:3px;
+}
+.vp-artist{font-family:'Dancing Script',cursive;font-size:16px;color:var(--text2);margin-bottom:18px;}
+.vp-controls{display:flex;align-items:center;gap:12px;}
+.vp-btn{
+  width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s;
+  box-shadow:0 4px 16px rgba(245,158,11,.4);
+}
+.vp-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(245,158,11,.5);}
+.play-tri{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #fff;margin-left:3px;}
+.pause-bars{display:flex;gap:4px;}
+.pb{width:4px;height:14px;background:#fff;border-radius:2px;}
+.vp-lbl{
+  font-family:'Dancing Script',cursive;
+  font-size:17px;color:var(--text2);
+}
+
+/* Evening card */
+.eve-section{width:100%;max-width:560px;padding:0 20px;margin-bottom:4px;}
+.eve-card{
+  background:linear-gradient(145deg,#1c1410,#4a1a0a);
+  border-radius:16px;padding:36px;
+  display:flex;justify-content:space-between;align-items:center;
+  position:relative;overflow:hidden;
+  box-shadow:0 16px 48px rgba(28,20,16,.25);
+}
+.eve-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 50%,rgba(251,191,36,.08) 0%,transparent 60%);
+}
+.eve-badge{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:10px;}
+.eve-title{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:300;color:#fef9f0;line-height:1.1;
+}
+.eve-sub{
+  font-family:'Dancing Script',cursive;
+  font-size:15px;color:rgba(254,243,199,.6);margin-top:10px;
+}
+.eve-right{text-align:right;position:relative;z-index:1;}
+.eve-big{
+  font-family:'Playfair Display',serif;
+  font-size:80px;font-weight:900;line-height:1;
+  color:rgba(251,191,36,.12);letter-spacing:-3px;
+}
+.eve-year{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(251,191,36,.3);}
 </style>
 </head>
 <body>
- 
-<!-- ══════════ PAGE 1 ══════════ -->
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- Floating background emojis on page 1 -->
+<div class="floaties" id="floaties">
+  <div class="floaty" style="left:5%;top:10%;animation-delay:0s">🌸</div>
+  <div class="floaty" style="left:88%;top:8%;animation-delay:.8s">⭐</div>
+  <div class="floaty" style="left:12%;top:80%;animation-delay:1.6s">🎊</div>
+  <div class="floaty" style="left:80%;top:75%;animation-delay:2.4s">🎉</div>
+  <div class="floaty" style="left:92%;top:45%;animation-delay:.4s">✨</div>
+  <div class="floaty" style="left:3%;top:50%;animation-delay:1.2s">🎓</div>
+  <div class="floaty" style="left:45%;top:3%;animation-delay:2s">🔔</div>
+  <div class="floaty" style="left:55%;top:92%;animation-delay:.6s">💫</div>
+</div>
+
+<!-- ═══════════════ PAGE 1 ═══════════════ -->
 <div class="page active" id="p1">
-  <div class="p1-top ani ani-1">
-    <p class="p1-eyebrow">Հրավիրատոմս</p>
-    <div class="p1-rule"></div>
-  </div>
- 
-  <div class="env-wrap ani ani-2" onclick="goTo(2)">
-    <div class="env-shadow"></div>
-    <div class="env-body">
-      <div class="env-flap"></div>
-      <div class="env-left"></div><div class="env-right"></div>
-      <div class="env-base"></div>
-      <div class="env-border"></div>
-      <div class="env-seal">
-        <div class="seal-ring">
-          <div class="seal-inner">
-            <span class="seal-grade">9ե</span>
-            <span class="seal-line"></span>
+  <div class="p1-inner">
+    <div class="p1-school-badge ani ani-1">Դպրոց N200 · Երևան</div>
+
+    <div class="stars-row ani ani-2">
+      <span class="star">⭐</span>
+      <span class="star">🌟</span>
+      <span class="star">⭐</span>
+    </div>
+
+    <div class="env-wrapper ani ani-2" id="env-wrapper" onclick="openEnvelope()">
+      <div class="env-body" id="env-body">
+        <div class="env-base-rect"></div>
+        <div class="env-tri env-tri-l"></div>
+        <div class="env-tri env-tri-r"></div>
+        <div class="env-tri env-tri-b"></div>
+        <div class="env-flap-wrap">
+          <div class="env-flap" id="env-flap"></div>
+        </div>
+        <div class="env-corner tl"></div>
+        <div class="env-corner tr"></div>
+        <div class="env-corner bl"></div>
+        <div class="env-corner br"></div>
+        <div class="env-seal">
+          <div class="seal-ring">
+            <div class="seal-inner">
+              <span class="seal-grade">9ե</span>
+              <span class="seal-line"></span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="ani ani-3" style="text-align:center;">
+      <p class="p1-cta">Ծրարն ընտրե՛ք</p>
+      <p class="p1-hint">👆 Սեղմե՛ք բացելու համար</p>
+    </div>
   </div>
- 
-  <p class="p1-sub ani ani-3">Սեղմեք անակնկալի համար</p>
 </div>
- 
-<!-- ══════════ PAGE 2 ══════════ -->
+
+<!-- ═══════════════ PAGE 2 ═══════════════ -->
 <div class="page" id="p2">
-  <div class="hero-wrap ani ani-1">
-    <div class="hero-ornament">
-      <div class="orn-line"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-line"></div>
-    </div>
-    <p class="hero-label">2017 — 2026</p>
-    <h1 class="hero-title serif">Վերջին<br><em>Զանգ</em></h1>
-    <p class="hero-sub">9ե դասարան</p>
-    <div class="hero-ornament2">
-      <div class="orn-line"></div>
-      <div class="orn-diamond"></div>
-      <div class="orn-line"></div>
+  <div class="hero-section ani ani-1">
+    <p class="hero-year-badge">2017 — 2026</p>
+    <h1 class="hero-title">Վերջին<br><em>Զանգ</em></h1>
+    <p class="hero-class-tag">9ե դասարան</p>
+    <div class="hero-divider">
+      <div class="hd-line"></div>
+      <span class="hd-star">✦</span>
+      <div class="hd-line"></div>
     </div>
   </div>
- 
-  <div class="mosaic ani ani-2">
-    <div class="ms tall"><!-- <img src="photo1.jpg"> -->նկար 1</div>
-    <div class="ms"><!-- <img src="photo2.jpg"> -->նկար 2</div>
-    <div class="ms"><!-- <img src="photo3.jpg"> -->նկար 3</div>
-  </div>
- 
-  <div class="mosaic-foot ani ani-3 w">
-    <span class="mf-years serif">2017 — 2026</span>
-    <div class="mf-vinyls">
-      <div class="mfv"><div class="mfv-c"></div></div>
-      <div class="mfv"><div class="mfv-c"></div></div>
+
+  <div class="stats-strip ani ani-2">
+    <div class="stat-box">
+      <div class="stat-num">9</div>
+      <div class="stat-lbl">Տարիներ</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">23</div>
+      <div class="stat-lbl">Շրջանավարտ</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">22</div>
+      <div class="stat-lbl">Մայիս</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">2026</div>
+      <div class="stat-lbl">Վերջին տարի</div>
     </div>
   </div>
- 
-  <div class="nav-grid ani ani-4 w">
+
+<div class="mosaic ani ani-3">
+    <!-- Մեծ նկարը ձախ կողմում -->
+    <div class="ms tall">
+        <div class="ms-ph">
+            <img src="dahlich.jpg" alt="Նկար 1" style="width: 500px; height: 250px; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- Վերևի փոքր նկարը աջ կողմում -->
+    <div class="ms">
+        <div class="ms-ph">
+            <img src="dasaranerk.jpg" alt="Նկար 2" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- Ներքևի փոքր նկարը աջ կողմում -->
+    <div class="ms">
+        <div class="ms-ph">
+            <img src="dasarankang.jpg" alt="Նկար 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+</div>
+
+  <div class="nav-grid ani ani-4">
     <button class="nav-tile" onclick="goTo(3)">
-      <span class="nav-tile-label">Ծանոթացի՛ր</span>
-      <span style="font-family:'Cormorant Garamond',serif;font-size:28px;">Մենք</span>
-      <span class="nav-tile-arrow">↗</span>
+      <span class="nt-emoji">👨‍👩‍👧‍👦</span>
+      <div class="nt-top">
+        <span class="nt-badge">Ծանոթուցյուն</span>
+        <span class="nt-arr">↗</span>
+      </div>
+      <span class="nt-title">Մենք</span>
     </button>
     <button class="nav-tile" onclick="goTo(4)">
-      <span class="nav-tile-label">Տեղեկություններ</span>
-      <span style="font-family:'Cormorant Garamond',serif;font-size:28px;">Մանրամասներ</span>
-      <span class="nav-tile-arrow">↗</span>
+      <span class="nt-emoji">📅</span>
+      <div class="nt-top">
+        <span class="nt-badge">Տեղ և Վայր</span>
+        <span class="nt-arr">↗</span>
+      </div>
+      <span class="nt-title">Մանրամասն</span>
     </button>
   </div>
 </div>
- 
-<!-- ══════════ PAGE 3 ══════════ -->
-<div class="page" id="p3" style="justify-content:flex-start;overflow-y:auto;">
-  <div class="w ani ani-1" style="margin-bottom:6px;">
-    <p class="pg-eyebrow">Մեր դասարանը</p>
-    <h2 class="pg-title serif">Մենք</h2>
+
+<!-- ═══════════════ PAGE 3 — ՄԵՆ ═══════════════ -->
+<div class="page" id="p3" style="overflow-y:auto;">
+  <div class="pg-header ani ani-1">
+    <p class="pgh-eyebrow">Մեր դասարան</p>
+    <h2 class="pgh-title">Մենք</h2>
+    <p class="pgh-sub">9ե դասարան · 2017–2026</p>
   </div>
-  <div class="pg-rule w ani ani-1"></div>
- 
-  <div class="teacher-wrap w ani ani-2">
-    <!-- <div class="tc-img"><img src="https://scontent.fevn9-2.fna.fbcdn.net/v/t39.30808-6/489692130_2705963262943266_3915907542374053825_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=101&ccb=1-7&_nc_sid=53a332&_nc_ohc=ZgSoTpOOpTcQ7kNvwGPG-PG&_nc_oc=AdqBI9NHQw70jwDzoCXM1cegntriJ1s-DjD_OGdcQEHExouIVrHQ3gPlVGW9nLY3Fwo&_nc_zt=23&_nc_ht=scontent.fevn9-2.fna&_nc_gid=Gc2bX8uMKSDp82F7nctkSw&_nc_ss=7a3a8&oh=00_Af2M6HrvU6frjQKOEG724h0uu3LKz9D4AupdfzmI4SK6Ew&oe=69E854EA"></div> -->
-    <div class="tc-right">
-      <span class="tc-badge">Դասղեկ</span>
-      <p class="tc-name serif">Անուն<br>Ազգանուն</p>
-      <p class="tc-quote">Դասղեկի մեջբերումն այստեղ կգրեք...</p>
-    </div>
-  </div>
- 
-  <div class="stu-section-hd w ani ani-3">
-    <span class="stu-hd-label">Աշակերտներ</span>
-    <div class="stu-hd-line"></div>
-  </div>
-  <div class="students-grid w ani ani-4" id="students-grid"></div>
- 
-  <button class="back-btn w ani ani-5" onclick="goTo(2)">
-    <span class="back-arr"></span> Հետ
-  </button>
-</div>
- 
-<!-- ══════════ PAGE 4 ══════════ -->
-<div class="page" id="p4" style="justify-content:flex-start;overflow-y:auto;">
-  <div class="cls-photo w ani ani-1"><!-- <img src="class_photo.jpg"> -->Ամբողջ դասարանի նկարը</div>
- 
-  <div class="event-card w ani ani-2">
-    <div class="ev-inner-top">
+
+  <div class="teacher-card ani ani-2">
+    <div class="tc-inner">
+      <div class="tc-photo">
+        <!-- <img src="dasghek.jpg" alt="Դasghek"> -->
+        👩‍🏫
+      </div>
       <div>
-        <p class="ev-badge" style="margin-bottom:12px;">Վերջին Զանգ · 2026</p>
-        <p class="ev-bigdate serif">24<br>Մայիս</p>
-      </div>
-      <p class="ev-year serif" style="margin-top:4px;">Կիրակի</p>
-    </div>
-    <div class="ev-rule"></div>
-    <div class="ev-row">
-      <div class="ev-col">
-        <p class="ev-col-label">Ժամը</p>
-        <p class="ev-col-val serif">00:00</p>
-      </div>
-      <div class="ev-col">
-        <p class="ev-col-label">Վայր</p>
-        <p class="ev-col-val serif">Դպրոց N200</p>
+        <span class="tc-badge">Dasghek</span>
+        <p class="tc-name">Anum Azganun</p>
+        <p class="tc-subject">Предмет / Masagitutyun</p>
+        <p class="tc-quote"><span class="tc-qm">"</span>Dasgheki medjberumy aysteg kgrek...</p>
       </div>
     </div>
   </div>
- 
-  <div class="cal-wrap w ani ani-3">
-    <div class="cal-head">
-      <p class="cal-title serif">Մայիս 2026</p>
-      <p class="cal-sub">24-ը նշված է</p>
+
+  <div class="students-wrap ani ani-3">
+    <div class="stu-hdr">
+      <span class="stu-lbl">Աշակերտներ</span>
+      <div class="stu-rule"></div>
+      <span class="stu-cnt">23 հոգի</span>
     </div>
-    <div class="cal-grid" id="calg"></div>
+    <div class="students-grid" id="students-grid"></div>
   </div>
- 
-  <!-- VINYL PLAYER -->
-  <div class="vinyl-player w ani ani-4">
-    <div class="vp-bg"></div><div class="vp-bg2"></div>
-    <div class="disc" onclick="togglePlay()">
-      <div class="disc-body" id="disc">
-        <div class="disc-label">
-          <span class="dl-grade">9ե</span>
-        </div>
-        <div class="disc-hole"></div>
-      </div>
-    </div>
-    <div class="vp-info">
-      <p class="vp-badge">Ավարտական Երգ</p>
-      <p class="vp-title serif" id="song-title">Վերջին զանգ</p>
-      <p class="vp-artist serif" id="song-artist">Hayat Project</p>
-      <div class="vp-controls">
-        <button class="vp-btn" onclick="togglePlay()" id="play-btn">
-          <span class="play-tri" id="play-icon"></span>
-        </button>
-        <span class="vp-label serif" id="play-label">Լսել</span>
-      </div>
-    </div>
+
+  <div class="back-area ani ani-5">
+    <button class="back-btn" onclick="goTo(2)">
+      <span class="back-arr">←</span> Hetk dardzer
+    </button>
   </div>
- 
-  <div class="evening-card w ani ani-5">
-    <div class="ev2-left">
-      <p class="ev2-badge">Ավարտական Երեկո</p>
-      <p class="ev2-title serif">Մայիս<br>2026</p>
-    </div>
-    <div class="ev2-right">
-      <p class="ev2-month serif">9ե</p>
-    </div>
-  </div>
- 
-  <button class="back-btn w ani ani-5" onclick="goTo(2)">
-    <span class="back-arr"></span> Հետ
-  </button>
 </div>
- 
+
+<!-- ═══════════════ PAGE 4 — ՄANRAMASN ═══════════════ -->
+<div class="page" id="p4" style="overflow-y:auto;">
+  <div class="class-photo-blk ani ani-1">
+    <!-- <img src="class_photo.jpg" alt=""> -->
+    <div class="cp-ph">
+      <span class="cp-icon">📷</span>
+      <span>Amboghji dasarany nkary</span>
+    </div>
+  </div>
+
+  <div class="ev-section ani ani-2">
+    <div class="ev-card">
+      <div class="ev-top">
+        <span class="ev-badge">Վերջին դաս · 2026</span>
+        <span class="ev-day-pill">Շաբաթ</span>
+      </div>
+      <div>
+        <span class="ev-date">22</span>
+        <span class="ev-month">Մայիս</span>
+      </div>
+      <p class="ev-wday">Շաբաթ · Մայիս 22 · 2026</p>
+      <div class="ev-divider"></div>
+      <div class="ev-info">
+        <div class="ev-cell">
+          <p class="ev-cell-lbl">🕑 Ժամ</p>
+          <p class="ev-cell-val">14:00</p>
+        </div>
+        <div class="ev-cell">
+          <p class="ev-cell-lbl">📍 Վայր</p>
+          <p class="ev-cell-val" style="font-size:20px;">Դպրոց N200</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cal-section ani ani-3">
+    <div class="cal-card">
+      <div class="cal-head">
+        <p class="cal-title">Մայիս 2026</p>
+      </div>
+      <div class="cal-grid" id="calg"></div>
+    </div>
+  </div>
+
+  <div class="vinyl-section ani ani-4">
+    <div class="vinyl-card">
+      <div class="disc-wrap" onclick="togglePlay()">
+        <div class="disc-body" id="disc">
+          <div class="disc-label">
+            <span class="dl-grade">9ե</span>
+            <span class="dl-line"></span>
+          </div>
+          <div class="disc-hole"></div>
+        </div>
+      </div>
+      <div class="vp-right">
+        <p class="vp-badge">Ավարտական երգ🎵</p>
+        <p class="vp-title" id="song-title">Arame - Verjin Zang </p>
+        <p class="vp-artist" id="song-artist">կատարող</p>
+        <div class="vp-controls">
+          <button class="vp-btn" onclick="togglePlay()" id="play-btn">
+            <span class="play-tri"></span>
+          </button>
+          <span class="vp-lbl" id="play-lbl">Լսել</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eve-section ani ani-5">
+    <div class="eve-card">
+      <div>
+        <p class="eve-badge">Ավարտան Երեկո 🎊</p>
+        <p class="eve-title">Ավարտան<br>Երակո</p>
+        <p class="eve-sub">Mayis 22, 2026 · 14:00</p>
+      </div>
+      <div class="eve-right">
+        <p class="eve-big">9ե</p>
+        <span class="eve-year">2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-area ani ani-5" style="margin-top:8px;">
+    <button class="back-btn" onclick="goTo(2)">
+      <span class="back-arr">←</span> Hetk dardzer
+    </button>
+  </div>
+</div>
+
 <script>
+/* ══════════════════════════════════════════════════════════════
+   ✏️  ԿOНФИГУРАЦИЯ — МИАЙН АЙС БАЗХИNY ФЕHЕК
+   ══════════════════════════════════════════════════════════════
+
+   ДАСGЕK — дасgheki anun, azganun, nkar u medjerber
+   ──────────────────────────────────────────────── */
+var DASGHEK = {
+  anun:         "Նուշիկ Մեհրաբյան",
+  masagitutyun: "Պարսկերենի ուսուցիչ/Սիրելի դասղեկ",
+  nkar:         "dasxek.png",
+  medjerber:    "«Ձեր առջև բացվում են նոր դռներ։ Մաղթում եմ, որ ձեր կյանքի ճանապարհին միշտ լինեք արդար, համարձակ և երբեք չմոռանաք այն ջերմությունը, որով կիսվել ենք այս պատերի ներսում»:"
+};
+
+/* 25 ashԱԿԵՐՏ — anun, azganun, nkar
+   ──────────────────────────────── */
+var ASHAKERTNER = [
+  /* 01 */ { anun: "Ռուբեն",  azganun: "Երվանդյան",  nkar: "Rubo.png" },
+  /* 02 */ { anun: "Մարիամ",  azganun: "Զաքարյան",  nkar: "Masha.png" },
+  /* 03 */ { anun: "Արթուր",  azganun: "Մխիթարյան",  nkar: "Artur.png" },
+  /* 04 */ { anun: "Հուլյանա",  azganun: "Նազարյան",  nkar: "hulyan.png" },
+  /* 06 */ { anun: "Վալերի",  azganun: "Մուսաելյան",  nkar: "valer.png" },
+  /* 07 */ { anun: "Աննա",  azganun: "Հայրապետյան",  nkar: "Anna.png" },
+  /* 08 */ { anun: "Մարիամ",  azganun: "Կարապետյան",  nkar: "mariam.png" },
+  /* 09 */ { anun: "Արտաշես",  azganun: "Բուռնազյան",  nkar: "artash.png" },
+  /* 10 */ { anun: "Սոֆիա",  azganun: "Զուրաբյան",  nkar: "sofia.png" },
+  /* 11 */ { anun: "Ջուլիետա",  azganun: "Բագունց",  nkar: "juli.png" },
+  /* 12 */ { anun: "Վրեժ",  azganun: "Գալստյան",  nkar: "vrej.png" },
+  /* 13 */ { anun: "Էվա",  azganun: "Հոբոսյան",  nkar: "eva.png" },
+  /* 14 */ { anun: "Վիգեն",  azganun: "Պապոյան",  nkar: "vigen.png" },
+  /* 15 */ { anun: "Դիանա",  azganun: "Ղազարյան",  nkar: "diana.png" },
+  /* 16 */ { anun: "էրիկ",  azganun: "Զուրաբյամ",  nkar: "ero.png" },
+  /* 17 */ { anun: "Մոնիկա",  azganun: "Ղլիջյան",  nkar: "monica.png" },
+  /* 18 */ { anun: "Արամ",  azganun: "Միքաէլյան",  nkar: "aram.png" },
+  /* 19 */ { anun: "Ամալի",  azganun: "Դանիելյան",  nkar: "amali.png" },
+  /* 20 */ { anun: "Դավիթ",  azganun: "Գեվորգյան",  nkar: "davo.png" },
+  /* 21 */ { anun: "Էվա",  azganun: "Հարուցունյան",  nkar: "evahar.png" },
+  /* 22 */ { anun: "Վահրամ",  azganun: "Մադաթյան",  nkar: "vahram.png" },
+  /* 23 */ { anun: "Մերի",  azganun: "Արթինյան",  nkar: "meri.png" },
+  /* 24 */ { anun: "Էրիկ",  azganun: "Շաբոյան",  nkar: "eroner.png" },
+
+];
+/* ══════════════════════════════════════════════════════════════
+   ✅  КOНЕЦ — АЙС ТЕГХИН ВЕВЕV VOTCHINK MI КEREK
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─── NAVIGATION ─── */
 function goTo(n){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   var pg=document.getElementById('p'+n);
   pg.classList.add('active');
   pg.scrollTop=0;window.scrollTo(0,0);
+  if(n!==1)document.getElementById('floaties').style.display='none';
+  else document.getElementById('floaties').style.display='';
 }
- 
+
+/* ─── CONFETTI ─── */
+var canvas=document.getElementById('confetti-canvas');
+var ctx=canvas.getContext('2d');
+var pieces=[];
+var colors=['#f59e0b','#fbbf24','#f43f5e','#8b5cf6','#0ea5e9','#10b981','#f97316','#ec4899'];
+
+function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+
+function spawnConfetti(count){
+  for(var i=0;i<count;i++){
+    pieces.push({
+      x:Math.random()*canvas.width,
+      y:-20,
+      w:Math.random()*10+4,
+      h:Math.random()*6+3,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      vx:(Math.random()-0.5)*4,
+      vy:Math.random()*4+2,
+      angle:Math.random()*360,
+      spin:Math.random()*6-3,
+      opacity:1,
+      life:1
+    });
+  }
+}
+
+var confettiRunning=false;
+function runConfetti(){
+  if(!confettiRunning)return;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pieces.forEach(function(p){
+    p.x+=p.vx;p.y+=p.vy;p.angle+=p.spin;p.vy+=0.05;p.life-=0.008;
+    ctx.save();
+    ctx.globalAlpha=Math.max(0,p.life);
+    ctx.translate(p.x,p.y);
+    ctx.rotate(p.angle*Math.PI/180);
+    ctx.fillStyle=p.color;
+    ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+    ctx.restore();
+  });
+  pieces=pieces.filter(function(p){return p.life>0&&p.y<canvas.height+40;});
+  if(pieces.length>0){requestAnimationFrame(runConfetti);}
+  else{confettiRunning=false;canvas.style.display='none';}
+}
+
+function launchConfetti(){
+  canvas.style.display='block';
+  confettiRunning=true;
+  spawnConfetti(200);
+  setTimeout(function(){spawnConfetti(150);},400);
+  setTimeout(function(){spawnConfetti(120);},800);
+  runConfetti();
+}
+
+/* ─── ENVELOPE OPEN ─── */
+var envelopeOpened=false;
+function openEnvelope(){
+  if(envelopeOpened)return;
+  envelopeOpened=true;
+  var flap=document.getElementById('env-flap');
+  var body=document.getElementById('env-body');
+  flap.classList.add('open');
+  setTimeout(function(){
+    launchConfetti();
+    setTimeout(function(){
+      body.classList.add('opening');
+      setTimeout(function(){goTo(2);},700);
+    },400);
+  },500);
+}
+
+/* ─── RENDER DASGHEK ─── */
+(function(){
+  var tc=document.querySelector('.tc-name');
+  var ts=document.querySelector('.tc-subject');
+  var tq=document.querySelector('.tc-quote');
+  var tp=document.querySelector('.tc-photo');
+  if(tc)tc.textContent=DASGHEK.anun;
+  if(ts)ts.textContent=DASGHEK.masagitutyun;
+  if(tq)tq.innerHTML='<span class="tc-qm">\u201c</span>'+DASGHEK.medjerber;
+  if(tp){
+    var img=document.createElement('img');
+    img.src=DASGHEK.nkar;img.alt=DASGHEK.anun;
+    img.onerror=function(){tp.textContent='\uD83D\uDC69\u200D\uD83C\uDFEB';};
+    tp.innerHTML='';tp.appendChild(img);
+  }
+})();
+
+/* ─── RENDER ASHAKERTNER ─── */
+var grid=document.getElementById('students-grid');
+ASHAKERTNER.forEach(function(s,i){
+  var fullName=s.anun+' '+s.azganun;
+  var ini=(s.anun[0]||'')+(s.azganun[0]||'');
+  var num=String(i+1).padStart(2,'0');
+  var c=document.createElement('div');c.className='stu-card';
+  c.innerHTML='<div class="stu-photo"><span class="stu-num">'+num+'</span>'+
+    '<img src="'+s.nkar+'" alt="'+fullName+'" onerror="this.parentNode.innerHTML=\'<span class=stu-num>'+num+'<\/span><span class=stu-ini>'+ini+'<\/span>\'">'+
+    '</div><p class="stu-name">'+fullName+'</p>';
+  grid.appendChild(c);
+});
+
+/* ─── CALENDAR ─── */
+var calg=document.getElementById('calg');
+['Ե','Ե','Չ','Հ','Ու','Շ','Կ'].forEach(function(h){
+  var d=document.createElement('div');d.className='cal-h';d.textContent=h;calg.appendChild(d);
+});
+for(var b=0;b<4;b++){var e=document.createElement('div');e.className='cal-d';calg.appendChild(e);}
+for(var i=1;i<=31;i++){
+  var d=document.createElement('div');
+  d.className='cal-d'+(i===22?' hi':' cur');
+  d.textContent=i;calg.appendChild(d);
+}
+
+/* ─── VINYL ─── */
 var playing=false;
-var youtubeUrl='https://www.youtube.com/watch?v=fg2d6Zfviu4';
-document.getElementById('song-title').textContent='Երգի անունը';
-document.getElementById('song-artist').textContent='Կատարող';
- 
+var ytUrl='https://www.youtube.com/watch?v=fg2d6Zfviu4';
+document.getElementById('song-title').textContent='Ergi Anuny';
+document.getElementById('song-artist').textContent='Katarol';
 function togglePlay(){
   playing=!playing;
   var disc=document.getElementById('disc');
   var btn=document.getElementById('play-btn');
-  var lbl=document.getElementById('play-label');
+  var lbl=document.getElementById('play-lbl');
   if(playing){
-    disc.classList.add('playing');
+    disc.classList.add('spinning');
     btn.innerHTML='<div class="pause-bars"><div class="pb"></div><div class="pb"></div></div>';
-    lbl.textContent='Կանգ';
-    window.open(youtubeUrl,'_blank');
-  } else {
-    disc.classList.remove('playing');
+    lbl.textContent='Kangl...';
+    window.open(ytUrl,'_blank');
+  }else{
+    disc.classList.remove('spinning');
     btn.innerHTML='<span class="play-tri"></span>';
-    lbl.textContent='Լսել';
+    lbl.textContent='Lsel';
   }
 }
- 
-var students=[
-  {name:"Անուն Ազգանուն",img:"s1.jpg"},
-  {name:"Անուն Ազգանուն",img:"s2.jpg"},
-  {name:"Անուն Ազգանուն",img:"s3.jpg"},
-  {name:"Անուն Ազգանուն",img:"s4.jpg"},
-  {name:"Անուն Ազգանուն",img:"s5.jpg"},
-  {name:"Անուն Ազգանուն",img:"s6.jpg"},
-  {name:"Անուն Ազգանուն",img:"s7.jpg"},
-  {name:"Անուն Ազգանուն",img:"s8.jpg"},
-  {name:"Անուն Ազգանուն",img:"s9.jpg"},
-  {name:"Անուն Ազգանուն",img:"s10.jpg"},
-  {name:"Անուն Ազգանուն",img:"s11.jpg"},
-  {name:"Անուն Ազգանուն",img:"s12.jpg"},
-  {name:"Անուն Ազգանուն",img:"s13.jpg"},
-  {name:"Անուն Ազգանուն",img:"s14.jpg"},
-  {name:"Անուն Ազգանուն",img:"s15.jpg"},
-  {name:"Անուն Ազգանուն",img:"s16.jpg"},
-  {name:"Անուն Ազգանուն",img:"s17.jpg"},
-  {name:"Անուն Ազգանուն",img:"s18.jpg"},
-  {name:"Անուն Ազգանուն",img:"s19.jpg"},
-  {name:"Անուն Ազգանուն",img:"s20.jpg"},
-  {name:"Անուն Ազգանուն",img:"s21.jpg"},
-  {name:"Անուն Ազգանուն",img:"s22.jpg"},
-  {name:"Անուն Ազգանուն",img:"s23.jpg"},
-  {name:"Անուն Ազգանուն",img:"s24.jpg"}
-];
-var grid=document.getElementById('students-grid');
-students.forEach(function(s){
-  var ini=s.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2);
-  var c=document.createElement('div');c.className='stu-card';
-  c.innerHTML='<div class="stu-img"><img src="'+s.img+'" alt="'+s.name+'" onerror="this.parentNode.innerHTML=\'<span class=stu-ini>'+ini+'</span>\'"></div><p class="stu-name">'+s.name+'</p>';
-  grid.appendChild(c);
-});
- 
-var g=document.getElementById('calg');
-['Ե','Ե','Չ','Հ','Ու','Շ','Կ'].forEach(function(h){var d=document.createElement('div');d.className='cal-h';d.textContent=h;g.appendChild(d);});
-for(var b=0;b<4;b++){var e=document.createElement('div');e.className='cal-d';g.appendChild(e);}
-for(var i=1;i<=31;i++){var d=document.createElement('div');d.className='cal-d'+(i===24?' hi':'');d.textContent=i;g.appendChild(d);}
 </script>
 </body>
 </html>
